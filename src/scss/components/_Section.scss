@@ -1,0 +1,22 @@
+.section {
+    &:hover .section__heading a {
+        display: block;
+    }
+    margin-bottom: 80px;
+    &__title {
+        font-size: 2rem;
+        text-transform: capitalize;
+        text-align: center;
+    }
+    &__heading {
+        display: flex;
+        margin-bottom: 20px;
+        justify-content: space-between;
+        a {
+            margin-top: 5px;
+            display: none;
+            cursor: pointer;
+            color: $main-color;
+        }
+    }
+}

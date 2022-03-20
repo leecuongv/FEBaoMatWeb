@@ -1,0 +1,48 @@
+.story-card {
+    display: flex;
+    padding: 6px;
+    height: 110px;
+    position: relative;
+    margin-bottom: 48px;
+    &__tilte {
+        display: -webkit-box;
+        font-size: 15px;
+        font-weight: 600;
+        overflow: hidden;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+    }
+    &__content {
+        @include flex(unset, space-between);
+        flex-direction: column;
+        font-size: 14px;
+        width: 100%;
+        padding-left: 10px;
+    }
+    &__description {
+        color: #666;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+    }
+    &__info {
+        @include flex(unset, space-between);
+    }
+    &__img-wrap {
+        width: 100px;
+        img {
+            max-height: 100%;
+        }
+    }
+}
+
+.story-card::after {
+    content: "";
+    position: absolute;
+    bottom: -24px;
+    width: 102%;
+    border-bottom: 1px solid rgba(255, 175, 129, 0.3);
+}

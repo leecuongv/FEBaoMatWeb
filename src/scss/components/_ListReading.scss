@@ -1,0 +1,26 @@
+.reading-card {
+    display: flex;
+    width: 100%;
+    padding: 6px;
+    gap: 20px;
+    &__img-wrap {
+        width: 40px;
+        img {
+            max-height: 100%;
+        }
+    }
+    &__content {}
+    &__title {
+        display: -webkit-box;
+        font-size: 15px;
+        font-weight: 600;
+        overflow: hidden;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+    }
+    &__chap {
+        font-weight: 400;
+        opacity: 0.8;
+    }
+}

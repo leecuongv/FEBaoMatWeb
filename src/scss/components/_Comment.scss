@@ -1,0 +1,40 @@
+.comment {
+    &__wrap {
+        margin-top: 10px;
+        padding: 0 20px;
+        li {
+            padding: 10px 0;
+        }
+    }
+    &__form {
+        margin-bottom: 20px;
+    }
+    &__input {
+        position: relative;
+        width: 100%;
+    }
+    &__icon {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        height: 100%;
+        align-items: center;
+        &>span:hover {
+            color: $main-color;
+        }
+    }
+    &__body {
+        width: 100%;
+    }
+    &__nav {
+        display: flex;
+        gap: 20px;
+        justify-content: flex-end;
+    }
+    &__input {
+        textarea {
+            width: 100%;
+            padding: 10px;
+        }
+    }
+}

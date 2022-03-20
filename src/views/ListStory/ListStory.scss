@@ -1,0 +1,13 @@
+@use '../../scss/variables' as *;
+.section {
+    padding: 15px;
+    &-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+}
+
+.list-story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

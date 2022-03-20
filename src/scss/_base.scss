@@ -1,0 +1,188 @@
+@each $color,
+$val in $colors {
+    .color-#{$color} {
+        color: $val;
+    }
+    .bg-#{$color} {
+        background-color: $val;
+    }
+}
+
+@each $val in $numbers {
+    .grid-col-#{$val} {
+        grid-template-columns: repeat($val, 1fr);
+    }
+}
+
+@each $val in $numbers {
+    .grid-col-md-#{$val} {
+        @include tablet {
+            grid-template-columns: repeat($val, 1fr);
+        }
+    }
+}
+
+@each $val in $numbers {
+    .grid-col-sm-#{$val} {
+        @include mobile {
+            grid-template-columns: repeat($val, 1fr);
+        }
+    }
+}
+
+@each $val in $numbers {
+    .col-#{$val} {
+        width: ($val/12)*100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@each $val in $fonts {
+    .fs-#{$val} {
+        font-size: #{$val}px;
+    }
+}
+
+@each $val in $fontw {
+    .fw-#{$val/100} {
+        font-weight: $val;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1620px;
+    padding: 0 50px;
+    margin: auto;
+    position: relative;
+    @include tablet {
+        padding: 0 20px;
+    }
+    @include mobile {
+        padding: 0 10px;
+    }
+}
+
+.main {
+    margin-top: 72px;
+    margin-bottom: 2rem;
+    min-height: 100vh;
+}
+
+.grid {
+    display: grid;
+}
+
+form {
+    button {
+        min-width: 120px;
+        margin: 10px auto;
+        padding: 10px 20px;
+        margin: auto;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        border: .5px solid rgba(248, 170, 106, 0.514);
+        border-radius: 20px;
+        background-color: $main-color;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: $main-color-hover;
+    }
+}
+
+.btn-primary {
+    min-width: 120px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    margin: auto;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: .5px solid rgba(248, 170, 106, 0.514);
+    border-radius: 20px;
+    background-color: $main-color;
+    cursor: pointer;
+    &:hover {
+        background-color: $main-color-hover;
+    }
+}
+
+.btn-outline {
+    min-width: 120px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    border: .5px solid #444;
+    border-radius: 20px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+input,
+select {
+    border: 1px solid rgba(148, 148, 148, 0.541);
+    outline-color: $main-color;
+    width: 96%;
+    border-radius: 1rem;
+    height: 42px;
+    margin: 0 10px;
+    padding: 4px 12px;
+    transition: border-color .2s ease-in-out;
+    font-size: 15px;
+    &:focus {
+        border-color: rgba($main-color, .6);
+    }
+}
+
+.Toastify__toast-container--top-right {
+    top: 4rem !important
+}
+
+td,
+th {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.text-overflow-1-lines {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.text-secondary {
+    color: #999;
+}
+
+.avatar--45 {
+    width: 45px;
+    height: 45px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.ma {
+    margin: auto;
+}
+
+ul {
+    & li {
+        cursor: pointer;
+        &:hover {
+            color: $main-color;
+        }
+    }
+}

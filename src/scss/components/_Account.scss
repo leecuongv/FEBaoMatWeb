@@ -1,0 +1,60 @@
+.list-group {
+    &__item {
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        &.active {
+            background-color: $main-color;
+        }
+    }
+}
+
+.user {
+    &__menu {
+        display: none;
+        z-index: 10;
+        position: absolute;
+        background-color: azure;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0px 5px 5px 0px #aaa;
+        &.active {
+            display: block;
+        }
+    }
+    &__item {
+        position: relative;
+    }
+}
+
+.choose-roles {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-table {
+    table {
+        border-collapse: separate;
+        border-spacing: 0;
+        min-width: 350px;
+    }
+    /* top-left border-radius */
+    table tr:first-child th:first-child {
+        border-top-left-radius: 6px;
+    }
+    /* top-right border-radius */
+    table tr:first-child th:last-child {
+        border-top-right-radius: 6px;
+    }
+    /* bottom-left border-radius */
+    table tr:last-child td:first-child {
+        border-bottom-left-radius: 6px;
+    }
+    /* bottom-right border-radius */
+    table tr:last-child td:last-child {
+        border-bottom-right-radius: 6px;
+    }
+}

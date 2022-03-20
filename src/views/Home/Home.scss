@@ -1,0 +1,23 @@
+.imgHero {
+    background-image: url(https://static.cdnno.com/storage/topbox/7caa9deea9946f80fabbd8a123ad5aff.jpg);
+    position: absolute;
+    z-index: 0;
+    left: 0px;
+    overflow: hidden;
+    width: 100%;
+    height: 388px;
+    background-repeat: no-repeat;
+    background-position: 50% 0px;
+    background-size: cover;
+}
+
+.main {
+    padding-top: 220px;
+}
+
+.main-content {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 5px 20px 0 #777;
+}

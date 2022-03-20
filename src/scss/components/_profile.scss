@@ -1,0 +1,27 @@
+.profile {
+    &__wrap {
+        min-height: 500px;
+        box-shadow: $box-shadow;
+    }
+    &__main {
+        border: 1px solid #eee;
+        border-top: none;
+        border-bottom: none;
+    }
+    &__avt {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        & img {
+            border-radius: 50%;
+            width: 50%;
+            margin: 20px auto;
+        }
+    }
+    &__main {
+        height: 100%;
+        & .group-info {
+            padding-bottom: 10px;
+        }
+    }
+}
