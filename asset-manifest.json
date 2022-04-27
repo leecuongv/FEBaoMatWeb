@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/FEBaoMatWeb/static/css/main.0fa9856d.css",
+    "main.js": "/FEBaoMatWeb/static/js/main.c8d013df.js",
+    "static/media/logo.png": "/FEBaoMatWeb/static/media/logo.41dc980b52dd84191800.png",
+    "static/media/avt.png": "/FEBaoMatWeb/static/media/avt.e6a4f4fd837bf1c5555b.png",
+    "index.html": "/FEBaoMatWeb/index.html",
+    "main.0fa9856d.css.map": "/FEBaoMatWeb/static/css/main.0fa9856d.css.map",
+    "main.c8d013df.js.map": "/FEBaoMatWeb/static/js/main.c8d013df.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0fa9856d.css",
+    "static/js/main.c8d013df.js"
+  ]
+}
