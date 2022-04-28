@@ -1,6 +1,7 @@
 {
     "name": "front-end",
     "version": "0.1.0",
+    "homepage": "https://tranduy26913.github.io/FEBaoMatWeb/",
     "private": true,
     "dependencies": {
         "@ckeditor/ckeditor5-build-classic": "^33.0.0",
@@ -16,6 +17,7 @@
         "nodemon": "^2.0.15",
         "query-string": "^7.1.1",
         "react": "^17.0.2",
+        "react-csp": "^1.1.3",
         "react-dom": "^17.0.2",
         "react-redux": "^7.2.6",
         "react-router-dom": "^6.2.1",
@@ -26,12 +28,13 @@
         "web-vitals": "^2.1.4"
     },
     "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d build"
+        "deploy": "gh-pages -d build",
+        "dev": "react-scripts start",
+        "start": "react-scripts start",
+        "build": "react-csp dev && react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
     },
     "eslintConfig": {
         "extends": [
