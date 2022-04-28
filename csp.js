@@ -15,6 +15,9 @@ module.exports = {
         "connect-src": [
             "'self'",
             "https://bebaomatweb.herokuapp.com"
+        ],
+        "frame-ancestors":[
+            'none'
         ]
 
     }
