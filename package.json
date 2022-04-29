@@ -30,10 +30,10 @@
     "scripts": {
         "predeploy": "npm run build",
         "deploy": "gh-pages -d build",
-        "dev": "react-scripts start",
-        "start": "react-scripts start",
-        "build": "react-csp dev && react-scripts build",
-        "test": "react-scripts test",
+        "dev": "react-app-rewired start",
+        "start": "react-app-rewired start",
+        "build": "react-app-rewired build",
+        "test": "react-app-rewired test",
         "eject": "react-scripts eject"
     },
     "eslintConfig": {
@@ -55,6 +55,9 @@
         ]
     },
     "devDependencies": {
+        "csp-html-webpack-plugin": "^5.1.0",
+        "customize-cra": "^1.0.0",
+        "react-app-rewired": "^2.2.1",
         "sass": "^1.49.8",
         "sass-loader": "^12.6.0",
         "webpack": "^5.69.1"
