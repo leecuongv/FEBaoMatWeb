@@ -3,7 +3,7 @@
         "source": "/(.*)",
         "headers": [{
                 "key": "Content-Security-Policy",
-                "value": "default-src 'self';img-src *; form-action 'none' 'self';connect-src https://*;frame-ancestors 'none';script-src 'self';frame-src 'none'; font-src 'self' https://cdnjs.cloudflare.com; media-src 'none'; object-src 'none'; manifest-src 'self'; worker-src 'self'; prefetch-src 'self'"
+                "value": "default-src 'self';img-src *;connect-src https://*;frame-ancestors 'none';script-src 'self';frame-src 'none'; font-src 'self' https://cdnjs.cloudflare.com; media-src 'none'; object-src 'none'; manifest-src 'self'; worker-src 'self'; prefetch-src 'self'"
             },
             {
                 "key": "X-Content-Type-Options",
