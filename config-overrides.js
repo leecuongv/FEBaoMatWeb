@@ -23,15 +23,5 @@ function addCspHtmlWebpackPlugin(config) {
 }
 
 module.exports = {
-    webpack: override(addCspHtmlWebpackPlugin),
-    devServer: function(configFunction) {
-        return function(proxy, allowedHost) {
-            const config = configFunction(proxy, allowedHost)
-            config.headers = {
-                'X-Frame-Options': 'deny',
-                'X-Content-Type-Options':'nosniff'
-            }
-            return config
-        }
-    }
+    webpack: override(addCspHtmlWebpackPlugin)
 };
