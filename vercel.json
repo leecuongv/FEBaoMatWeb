@@ -3,7 +3,7 @@
         "source": "/(.*)",
         "headers": [{
                 "key": "Content-Security-Policy",
-                "value": "default-src 'self';style-src 'self' https://cdnjs.cloudflare.com;style-src-elem 'self' https://cdnjs.cloudflare.com;img-src 'self' https: blob: ;connect-src 'self' https:;form-action 'self';base-uri 'self';frame-ancestors 'none';script-src 'self';frame-src 'none'; font-src 'self' https://cdnjs.cloudflare.com; media-src 'none'; object-src 'none'; manifest-src 'self'; worker-src 'self'; prefetch-src 'self'"
+                "value": "default-src 'none';style-src 'self' https://cdnjs.cloudflare.com;style-src-elem 'self' https://cdnjs.cloudflare.com;img-src 'self' https: blob: ;connect-src 'self' https:;form-action 'self';base-uri 'self';frame-ancestors 'none';script-src 'self';frame-src 'none'; font-src 'self' https://cdnjs.cloudflare.com; media-src 'none'; object-src 'none'; manifest-src 'self'; worker-src 'self'; prefetch-src 'self'"
             },
             {
                 "key": "X-Content-Type-Options",
