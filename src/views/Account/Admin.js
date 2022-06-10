@@ -12,6 +12,7 @@ import Profile from './Profile';
 import Users from './Users'
 import TuTruyen from './TuTruyen';
 import CreateNovel from './CreateNovel';
+import PrivateRoute from '../PrivateRoute';
 
 function Account() {
   const menu = [
@@ -81,9 +82,11 @@ function Account() {
             <Routes>
               <Route path='profile' element={<Profile userInfo={userInfo}/>}></Route>
               <Route path='change-password' element={<ChangePassword />}></Route>
-              <Route path='users' element={<Users dispatch={dispatch}/>}></Route>
+              
+                <Route path='users' element={<Users dispatch={dispatch}/>}></Route>
+               
               <Route path='tu-truyen/*' element={<TuTruyen userInfo={userInfo}/>}></Route>
-              <Route path='dang-truyen' element={<CreateNovel  userInfo={userInfo}  />}></Route>
+              <Route path='dang-truyen' element={<CreateNovel  userInfo={userInfo}  />}></Route> 
             </Routes>
           </div>
         </div>

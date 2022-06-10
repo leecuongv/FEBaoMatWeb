@@ -73,7 +73,8 @@ export default function Header() {
         expandRef.current.classList.toggle('active')
     }
 
-    const handleDropdownProfile = () => {
+    const handleDropdownProfile = (e) => {
+        e.stopPropagation();
         profileDropdownRef?.current.classList.toggle('active')
     }
 
@@ -163,15 +164,17 @@ export default function Header() {
                                 <li><i style={{ marginRight: 4 + 'px' }} className="fa-regular fa-circle-up"></i> Đăng truyện</li>
                             </Link>
                             {
-                                user ? <div className='navbar-nav__profile'>
-                                    <div  tabIndex={"1"} onBlur={hideProfileDropdown} onClick={handleDropdownProfile} className="navbar-nav__profile__name">
+                                user ? <div ref={profileDropdownRef} className='navbar-nav__profile'>
+                                    <div>
+
+                                    <div onClick={handleDropdownProfile} className="navbar-nav__profile__name">
                                         {user.image ?
                                             <div className='navbar-nav__avatar'><img src={user.image} alt="" /></div>
                                             : <i style={{ marginRight: 4 + 'px' }} className="fa-solid fa-user"></i>
                                         }
                                         <a>{user.name || user.tenhienthi || user.username}</a>
                                     </div>
-                                    <div ref={profileDropdownRef} className="navbar-nav__profile__menu">
+                                    <div tabIndex={"1"} onBlur={hideProfileDropdown}  className="navbar-nav__profile__menu">
                                         <ul>
                                             {
                                                 menu[user?.roles[0] || 'USER'].map((item, i) => {
@@ -181,6 +184,7 @@ export default function Header() {
                                             }
                                             <li ><a onClick={onClickLogout}>Đăng xuất</a></li>
                                         </ul>
+                                    </div>
                                     </div>
                                 </div>
                                     :

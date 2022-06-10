@@ -20,7 +20,7 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='truyen/:url' element={<StoryDetail />}></Route>
         <Route element={<PrivateRoute roles={['USER']} />}>
-          <Route path='/user/*' element={<Account />}></Route>
+          <Route path='user/*' element={<Account />}></Route>
         </Route>
         <Route element={<PrivateRoute roles={['ADMIN']} />}>
           <Route path='admin/*' element={<Admin />}>

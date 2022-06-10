@@ -76,26 +76,49 @@
             font-weight: 600;
         }
         &__profile {
+            @include flex(center, center);
+            position: relative;
+            padding: 0 10px;
+            height: 100%;
             &__name {
                 display: flex;
                 align-items: center;
-                position: relative;
                 gap: 10px;
             }
             &__menu {
                 & li {
-                    padding: 4px 15px;
+                    padding: 0.75rem 1.5rem;
+                    border-bottom: solid 1px rgb(230, 230, 230);
+                    span {
+                        @include flex(center, unset);
+                        cursor: pointer;
+                        &:hover {
+                            color: $main-color;
+                        }
+                    }
+                    a {
+                        @include flex(center, unset);
+                    }
+                    i {
+                        font-size: 20px;
+                        margin-right: 4px;
+                    }
                 }
                 display: none;
                 position: absolute;
+                width: 230px;
                 top: 72px;
+                right: 0px;
                 border: 1px solid #ddd;
                 border-top: none;
                 box-shadow: 0px 6px 6px 0px rgb(201, 201, 201);
-                background-color: #f3eded;
-                &.active {
-                    display: block
+                background-color: #ffffff;
+            }
+            &.active {
+                .navbar-nav__profile__menu {
+                    display: block;
                 }
+                background-color: #fff;
             }
         }
         &__avatar {

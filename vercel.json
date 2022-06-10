@@ -22,6 +22,10 @@
                 "value": "no-referrer"
             },
             {
+                "key": "strict-transport-security",
+                "value": "max-age=31000000; includeSubDomains; preload"
+            },
+            {
                 "key": "Permissions-Policy",
                 "value": "geolocation=(self), microphone=()"
             }
