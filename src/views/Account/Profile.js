@@ -13,7 +13,7 @@ import Loading from '../../components/Loading';
 import LoadingData from '../../components/LoadingData';
 import getData from '../../api/getData';
 
-function Profile({userInfo,changeUserInfo}) {
+function Profile({ userInfo, changeUserInfo }) {
   const user = useSelector(state => state.auth.login?.user);
   const [image, setImage] = useState("");
   const [preview, setPreview] = useState(userInfo?.image || avt)
@@ -23,12 +23,12 @@ function Profile({userInfo,changeUserInfo}) {
   const [loadingUser, setLoadingUser] = useState(true)
   const dispatch = useDispatch()
 
-  
 
-  useEffect(async() => {
+
+  useEffect(async () => {
     if (userInfo) {
       setName(userInfo?.tenhienthi)
-      setBirthDate(userInfo?.birthdate?new Date(userInfo?.birthdate):new Date())
+      setBirthDate(userInfo?.birthdate ? new Date(userInfo?.birthdate) : new Date())
       setPreview(userInfo?.image)
       setLoadingUser(false)
     }
@@ -59,7 +59,7 @@ function Profile({userInfo,changeUserInfo}) {
       const update = await apiMain.updateUserInfo(user, dispatch, loginSuccess, data)
       dispatch(setLoading(false))
       toast.success("Cập nhật thông tin thành công", { autoClose: 1000, hideProgressBar: true, pauseOnHover: false })
-      const newUser ={...user, image:update.image,tenhienthi:update.tenhienthi}
+      const newUser = { ...user, image: update.image, tenhienthi: update.tenhienthi }
       dispatch(loginSuccess(newUser))
       changeUserInfo(update.userInfo)
     } catch (error) {
@@ -83,28 +83,38 @@ function Profile({userInfo,changeUserInfo}) {
     setName(e.target.value)
   }
   const onChangeBirthDate = (e) => {
-    try{
-      const date=new Date(e.target.value)
+    try {
+      const date = new Date(e.target.value)
       const regex = new RegExp("([0-9]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))")
-      if(regex.test(date.toISOString().substring(0,10))){
+      if (regex.test(date.toISOString().substring(0, 10))) {
         console.log(true)
         setBirthDate(date)
       }
       else
         setBirthDate(new Date())
-      
+
     }
-    catch(err){
+    catch (err) {
       //console.log(err)
       setBirthDate(new Date())
     }
-    
+
   }
 
   const onChangeImage = (e) => {
     if (e.target.files.lenght !== 0) {
-      setImage(e.target.files[0]);
-      setPreview(URL.createObjectURL(e.target.files[0]))
+      let ext = e.target.files[0].match(/\.([^\.]+)$/)[1];
+      var type = ['jpg','bmp','png','tif']
+      if (type.includes(ext)){
+
+        setImage(e.target.files[0]);
+        setPreview(URL.createObjectURL(e.target.files[0]))
+      }
+      else{
+        toast.warning("File được lựa chọn không phải định dạng ảnh. Vui lòng lựa chọn lại");
+        setImage(null)
+        setPreview(userInfo?.image)
+      }
     }
   }
 

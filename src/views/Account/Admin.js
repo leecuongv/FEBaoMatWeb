@@ -2,7 +2,7 @@
 import { Link, useLocation, Route, Routes } from 'react-router-dom';
 import Layout from '../../components/Layout';
 
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 import apiMain from '../../api/apiMain';
 import { loginSuccess } from '../../redux/authSlice';
 import { useSelector, useDispatch } from 'react-redux'
@@ -78,15 +78,15 @@ function Account() {
             </ul>
 
           </div>
-          <div className="col-9 " style={{'minHeight':'500px'}}>
+          <div className="col-9 " style={{ 'minHeight': '500px' }}>
             <Routes>
-              <Route path='profile' element={<Profile userInfo={userInfo}/>}></Route>
-              <Route path='change-password' element={<ChangePassword />}></Route>
-              
-                <Route path='users' element={<Users dispatch={dispatch}/>}></Route>
-               
-              <Route path='tu-truyen/*' element={<TuTruyen userInfo={userInfo}/>}></Route>
-              <Route path='dang-truyen' element={<CreateNovel  userInfo={userInfo}  />}></Route> 
+              <Route element={<PrivateRoute roles={['ADMIN']} />}>
+                <Route path='profile' element={<Profile userInfo={userInfo} />}></Route>
+                <Route path='change-password' element={<ChangePassword />}></Route>
+                <Route path='users' element={<Users dispatch={dispatch} />}></Route>
+                <Route path='tu-truyen/*' element={<TuTruyen userInfo={userInfo} />}></Route>
+                <Route path='dang-truyen' element={<CreateNovel userInfo={userInfo} />}></Route>
+              </Route>
             </Routes>
           </div>
         </div>
