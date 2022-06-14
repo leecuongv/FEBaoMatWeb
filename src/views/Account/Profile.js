@@ -103,10 +103,10 @@ function Profile({ userInfo, changeUserInfo }) {
 
   const onChangeImage = (e) => {
     if (e.target.files.lenght !== 0) {
-      let ext = e.target.files[0].match(/\.([^\.]+)$/)[1];
+      console.log(e.target.files)
+      let ext = e.target.files[0].name.match(/\.([^\.]+)$/)[1];
       var type = ['jpg','bmp','png','tif']
       if (type.includes(ext)){
-
         setImage(e.target.files[0]);
         setPreview(URL.createObjectURL(e.target.files[0]))
       }
@@ -114,6 +114,7 @@ function Profile({ userInfo, changeUserInfo }) {
         toast.warning("File được lựa chọn không phải định dạng ảnh. Vui lòng lựa chọn lại");
         setImage(null)
         setPreview(userInfo?.image)
+        document.getElementById('input-file').value = "";
       }
     }
   }
@@ -129,7 +130,7 @@ function Profile({ userInfo, changeUserInfo }) {
             <div className="col-5 profile__avt">
 
               <img src={preview} alt="" />
-              <input type={"file"} accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*" name={"avatar"} onChange={onChangeImage} />
+              <input id="input-file" type={"file"} accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*" name={"avatar"} onChange={onChangeImage} />
               <button onClick={upload}>Upload</button>
             </div>
             <div className="col-7 ">
