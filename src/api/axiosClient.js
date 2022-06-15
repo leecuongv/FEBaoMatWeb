@@ -3,8 +3,8 @@ import axios from 'axios';
 import queryString from 'query-string';
 import jwt_decode from 'jwt-decode';
 import getData from './getData';
-//const baseURL='https://bebaomatweb.herokuapp.com/api'
-const baseURL='http://localhost:5000/api'
+const baseURL='https://bebaomatweb.herokuapp.com/api'
+//const baseURL='http://localhost:5000/api'
 export const axiosClient = axios.create({
     baseURL: baseURL,
     
