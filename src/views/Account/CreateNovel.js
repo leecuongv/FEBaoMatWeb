@@ -55,7 +55,14 @@ function CreateNovel({userInfo}) {
     const handleCreate = async (e) => {
         e.preventDefault()
         if (image == null)
+        
             return;
+        if(image.target.files[0].size>1024*1024)
+        {
+            alert("Chỉ cho phép tải ảnh nhỏ hơn 1MB!")
+            return;
+        }
+        
         dispatch(setLoading(true))
         const url = name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").split(' ').filter(i=>i!=='').join('-').toLowerCase()
         const storageRef = ref(storage, `/images/truyen/${url}`);
